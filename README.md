@@ -1,7 +1,7 @@
 # Dijit Claro Stylus Conversion
 
 This repository contains a straight port of Dijit's Claro theme (as of Dojo
-version 1.7.2) from [LESS](http://lesscss.org/) to
+version 1.7.4) from [LESS](http://lesscss.org/) to
 [Stylus](http://learnboost.github.com/stylus/).
 
 To generate the CSS resources, install Stylus (e.g. using NPM), then within
