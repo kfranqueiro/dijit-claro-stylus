@@ -1,6 +1,6 @@
 # Dijit Claro Stylus Conversion
 
-This repository contains a port of Dijit's Claro theme (as of Dojo version 1.8.1)
+This repository contains a port of Dijit's Claro theme (as of Dojo version 1.8.5)
 from [LESS](http://lesscss.org/) to [Stylus](http://learnboost.github.com/stylus/).
 
 **Note:** a conversion for Dojo 1.7 is available on this repository's
@@ -19,7 +19,7 @@ The results of this conversion have been tested/vetted for accuracy via the
 following processes:
 
 * Compared CSS output of both LESS and Stylus for (near-)matching values
-* Compared diffs between 1.7.4 and 1.8.1's LESS against the corresponding diffs
+* Compared diffs between 1.7 and 1.8's LESS against the corresponding diffs
   between the 1.7 and 1.8 conversions in this repository
 * Visually compared using `dijit/themes/themeTester.html`
 
@@ -39,15 +39,6 @@ There was a noticeable difference in the result of 2 calculations for disabled
 textbox/textarea styles for WebKit in `form/Common.css`, which have had their
 source values tweaked such that the resulting output matches the output from
 Claro's `form/Common.less`.
-
-### Linear Gradients
-
-Styles for linear gradients include the standard `linear-gradient` property
-(supported by FF16+ and IE10+), and do not include the `-ms-linear-gradient`
-property (as it is only heeded by some preview releases of IE10).
-
-This change will also be present in Dojo 1.8.2; see
-[Dojo ticket 16250](http://bugs.dojotoolkit.org/ticket/16250).
 
 ### The `alpha-white-gradient` Mixin
 
