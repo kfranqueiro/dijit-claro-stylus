@@ -43,12 +43,6 @@ There are three areas of styling for the Menu:
 .claro .dijitMenu {
 	background-color:$menu-background-color;
 	border: 1px solid $popup-border-color;
-
-	/* so adjoining borders of MenuBar/ComboBox and Menu overlap, avoiding double border */
-	margin: -1px 0;
-}
-.dj_ie6 .claro .dijitMenu {
-	margin: 0;	/* above -1px makes top/bottom borders disappear on IE6 */
 }
 
 .claro .dijitMenuItem {
@@ -71,19 +65,28 @@ There are three areas of styling for the Menu:
 	border-spacing:0 0;
 	padding:0;
 }
-.claro .dijitMenuItem td{
-	padding:1px;
+
+.claro .dijitMenu .dijitMenuItem td,
+.claro .dijitComboBoxMenu .dijitMenuItem {
+	padding: $textbox-padding;	// Make drop down menu text line up with text in <input>.
+	border-width:1px 0 1px 0;
+	border-style:solid;
+	border-color: $select-dropdownitem-background-color;
 }
+
 /* hover over a MenuItem or MenuBarItem */
-.claro .dijitSelectMenu .dijitMenuItemHover td,
-.claro .dijitSelectMenu .dijitMenuItemSelected td,
+.claro .dijitMenu .dijitMenuItemHover td,
+.claro .dijitMenu .dijitMenuItemSelected td,
 .claro .dijitMenuItemHover,
+.claro .dijitComboBoxMenu .dijitMenuItemHover,
 .claro .dijitMenuItemSelected {
 	// note: seems like the selected MenuItem should use $pressed-background-color
 	// and .active-gradient, but claro didn't to that
+	border-color: $hovered-border-color;
 	background-color: $hovered-background-color;
 	standard-gradient();
 }
+
 .claro .dijitMenuItemActive {
 	// todo: seems like the selected MenuItem should come here
 	// todo: seems like should use $pressed-background-color
@@ -115,6 +118,7 @@ There are three areas of styling for the Menu:
 	background-image: url($image-arrow-sprite);
 	background-position: -14px 0;
 	margin-right:3px;
+	margin-bottom: 4px;
 }
 .claro .dijitMenuItemDisabled .dijitMenuItemIconCell {
 	opacity:1;
@@ -129,21 +133,26 @@ There are three areas of styling for the Menu:
 	margin-bottom:1px;
 }
 /* the checked menu item */
-.claro .dijitCheckedMenuItemIconChar {
-	display: none;
-}
-.claro .dijitCheckedMenuItemIcon {
+.claro .dijitCheckedMenuItem .dijitMenuItemIcon,
+.claro .dijitRadioMenuItem .dijitMenuItemIcon {
 	background-image: url($image-form-checkbox-and-radios);
 	background-repeat:no-repeat;
-	background-position: -15px 50%;
+	background-position: -15px 50%;	/* unchecked checkbox */
 	width:15px;
 	height:16px;
 }
-.dj_ie6 .claro .dijitCheckedMenuItemIcon {
+.dj_ie6 .claro .dijitCheckedMenuItem .dijitMenuItemIcon,
+.dj_ie6 .claro .dijitRadioMenuItem .dijitMenuItemIcon {
 	background-image: url($image-form-checkbox-and-radios-ie6);
 }
 .claro .dijitCheckedMenuItemChecked .dijitCheckedMenuItemIcon {
-	background-position: 0 50%;
+	background-position: 0 50%;	/* checked checkbox */
+}
+.claro .dijitRadioMenuItem .dijitMenuItemIcon {
+	background-position: -105px 50%;	/* unfilled circle */
+}
+.claro .dijitRadioMenuItemChecked .dijitMenuItemIcon {
+	background-position: -90px 50%;	/* filled circle */
 }
 
 /*ComboBox Menu*/
@@ -152,24 +161,14 @@ There are three areas of styling for the Menu:
 	background-image: none;
 }
 
-.claro .dijitSelectMenu .dijitMenuItem td,
-.claro .dijitComboBoxMenu .dijitMenuItem {
-	padding: $textbox-padding;	// Make drop down menu text line up with text in <input>.
-	border-width:1px 0 1px 0;
-	border-style:solid;
-	border-color: $select-dropdownitem-background-color;
-}
-.claro .dijitSelectMenu .dijitMenuItemSelected td,
+.claro .dijitMenu .dijitMenuItemSelected td,
 .claro .dijitComboBoxMenu .dijitMenuItemSelected {
+	// TODO: combine with above rules for selected items?
+	// But the selected item in a Select drop down is different than when MenuBarItem "File" is highlighted
+	// because the user is on the file menu?
 	color:$selected-text-color;
 	border-color:$hovered-border-color;
 	background-color:$hovered-background-color;
-}
-.claro .dijitSelectMenu .dijitMenuItemHover td,
-.claro .dijitComboBoxMenu .dijitMenuItemHover {
-	color: #000000;
-	border-color: #769dc0;
-	background-color: #abd6ff;
 }
 .claro .dijitComboBoxMenuActive .dijitMenuItemSelected {
 	background-color: $select-dropdownitem-hovered-background-color;	/* TODO: why is this a different color than normal .dijitMenuItemSelected? */
