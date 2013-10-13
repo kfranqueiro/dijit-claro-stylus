@@ -285,8 +285,9 @@ gradient-and-filter($color, $fade1, $fade2) {
 	//		The percent to fade at the top
 	// $fade2:
 	//		The percent to fade at the bottom
+	
 	background-color: $color; // the base color
-	linear-gradient(#fff - rgba(0, 0, 0, (100-$fade1) / 100), #fff - rgba(0, 0, 0, (100-$fade2) / 100));
+	linear-gradient(#fff0 + rgba(0, 0, 0, $fade1 / 100), #fff0 + rgba(0, 0, 0, $fade2 / 100));
 	filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=%s, endColorstr=%s)" % (fullcolor(lighten($color, $fade1)) fullcolor(lighten($color, $fade2))); // IE
 }
 horizontal-gradient-and-filter($color, $fade1, $fade2) {
@@ -301,8 +302,9 @@ horizontal-gradient-and-filter($color, $fade1, $fade2) {
 	//		The percent to fade at the top
 	// $fade2:
 	//		The percent to fade at the bottom
+	
 	background-color: $color; // the base color
-	linear-gradient(left, #fff - rgba(0, 0, 0, (100-$fade1) / 100), #fff - rgba(0, 0, 0, (100-$fade2) / 100));
+	linear-gradient(left, #fff0 + rgba(0, 0, 0, $fade1 / 100), #fff0 + rgba(0, 0, 0, $fade2 / 100));
 	filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=%s, endColorstr=%s, gradientType=1)" % (fullcolor(lighten($color, $fade1)) fullcolor(lighten($color, $fade2))); // IE
 }
 
