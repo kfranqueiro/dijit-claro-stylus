@@ -1,10 +1,12 @@
 # Dijit Claro Stylus Conversion
 
-This repository contains a port of Dijit's Claro theme (as of Dojo version 1.8.5)
+This repository contains a port of Dijit's Claro theme (as of Dojo version 1.9.1)
 from [LESS](http://lesscss.org/) to [Stylus](http://learnboost.github.com/stylus/).
 
-**Note:** a conversion for Dojo 1.7 is available on this repository's
-[1.7 branch](https://github.com/kfranqueiro/dijit-claro-stylus/tree/dojo17).
+**Note:** conversions for Dojo 1.7 and 1.8 are available on separate branches:
+
+* [dojo17 branch](https://github.com/kfranqueiro/dijit-claro-stylus/tree/dojo17)
+* [dojo18 branch](https://github.com/kfranqueiro/dijit-claro-stylus/tree/dojo18)
 
 ## Usage
 
@@ -15,12 +17,12 @@ the directory this repository was cloned to, run...
 
 ## Notes
 
-The results of this conversion have been tested/vetted for accuracy via the
+The results of this conversion have been checked for accuracy via the
 following processes:
 
 * Compared CSS output of both LESS and Stylus for (near-)matching values
-* Compared diffs between 1.7 and 1.8's LESS against the corresponding diffs
-  between the 1.7 and 1.8 conversions in this repository
+* Compared diffs between the previous and current Dojo version's LESS against
+  the corresponding diffs between the 1.7 and 1.8 conversions in this repository
 * Visually compared using `dijit/themes/themeTester.html`
 
 ## Differences
