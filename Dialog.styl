@@ -1,31 +1,31 @@
-/* Dialog 
- * 
+/* Dialog
+ *
  * Styling Dialog includes two sections: Dialog and Tooltip & TooltipDialog
- * 
+ *
  * Dialog:
- * 1. Dialog (default styling): 
+ * 1. Dialog (default styling):
  * 		.dijitDialog - styles for dialog's bounding box
  *
- * 2. Dialog title 
+ * 2. Dialog title
  * 		.dijitDialogTitleBar - styles for the title container at the top of dialog
  * 		.dijitDialogTitle - the text container in dialog title
- * 
- * 3. Dialog content 
+ *
+ * 3. Dialog content
  * 		.dijitDialogPaneContent - main container for content area and action bar
  * 		.dijitDialogPaneContentArea - styles for content container
- * 
- * 4. Dialog action bar 
+ *
+ * 4. Dialog action bar
  * 		.dijitDialogPaneActionBar - styles for action buttons lie at the bottom of dialog pane content
- * 
- * 5. Dialog underlay 
+ *
+ * 5. Dialog underlay
  * 		.dijitDialogUnderlay - div under the dialog which used for separate dialog and page content
- * 
- * 
+ *
+ *
  * Tooltip & TooltipDialog:
- * 1. tooltip content container: 
+ * 1. tooltip content container:
  * 		.dijitTooltipContainer - tooltip content container
  *
- * 2. tooltip connector: 
+ * 2. tooltip connector:
  * 		.dijitTooltipConnector - tooltip anchor includes 4 direction(up, down, left, right)
  */
 
@@ -34,7 +34,7 @@
 .claro .dijitDialog {
 	border: 1px solid $popup-border-color;
 	box-shadow: 0 1px 5px rgba(0,0,0,0.25);
-} 
+}
 
 .claro .dijitDialogPaneContent {
 	background: $pane-background-color repeat-x top left;
@@ -46,7 +46,7 @@
 .claro .dijitDialogPaneContentArea {
 	/* trick to get action bar (gray bar at bottom with OK/cancel buttons) to span from
 	 * left to right but still indent dialog content
-	 */ 
+	 */
 	margin: -10px -8px;
 	padding: 10px 8px;
 }
@@ -57,7 +57,9 @@
 	padding: 3px 5px 2px 7px;
 	text-align: right;
 	border-top: 1px solid $minor-border-color;
-	margin: 10px -8px -10px;
+}
+.claro .dijitDialogPaneContent .dijitDialogPaneActionBar {
+	margin: 10px -8px -10px; // Offsets 10px padding on dijitDialogPaneContent
 }
 .claro .dijitTooltipDialog .dijitDialogPaneActionBar {
   -webkit-border-bottom-right-radius: 4px;
@@ -139,7 +141,7 @@
 	box-shadow: 0 1px 3px rgba(0,0,0,0.25);
 	font-size: 1em;
 	color: $text-color;
-} 
+}
 
 .claro .dijitTooltipConnector {
 	/* the arrow piece */
