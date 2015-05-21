@@ -177,6 +177,7 @@ $image-form-error ?= "form/images/error.png";
 $image-form-slider-thumbs ?= "form/images/sliderThumbs.png";
 $image-layout-tab-close ?= "layout/images/tabClose.png";	// [x] icon to close a tab
 $image-loading-animation ?= "images/loadingAnimation.gif";
+$image-loading-animation-rtl ?= "images/loadingAnimation_rtl.gif";
 $image-tooltip ?= "images/tooltip.png";	// arrow connectors
 $image-tooltip-ie6 ?= "images/tooltip8bit.png";	// arrow connectors (8 bit)
 $image-tree-expand ?= "images/treeExpandImages.png";
@@ -217,10 +218,10 @@ transition-timing-function() {
 linear-gradient() {
 	// summary:
 	//		Expands to browser specific background-image specifications for a linear-gradient
-	
+
 	// Ensure that arguments are rendered comma-delimited
 	$value = (length(arguments) > 1 ? unquote(join(", ", arguments)) : arguments[0]);
-	
+
  	background-image: -moz-linear-gradient($value); // FF3.6+
  	background-image: -webkit-linear-gradient($value); // Chrome10+, Safari5.1+
  	background-image: -o-linear-gradient($value); // Opera 11.10+
@@ -234,19 +235,19 @@ alpha-white-gradient() {
 	// example:
 	//		Gradient starts at top (0%) with 30% opacity, and then ends at bottom (100%) with full transparency
 	//		|	alpha-white-gradient((0.3 0%), (0 100%))
-	
+
 	$args = ();
 	if (type(arguments[0]) == "ident") {
 		// Immediately add first argument if it is an ident e.g. left, top
 		push($args, arguments[0]);
 	}
-	
+
 	// Iterate arguments, skipping first if already added above
 	for $stop in arguments[length($args)...length(arguments)] {
 		// Each "stop" is a tuple consisting of alpha and position along gradient
 		push($args, "rgba(255,255,255,%s) %s" % ($stop[0] $stop[1]));
 	}
-	
+
 	linear-gradient(unquote(join(", ", $args)));
 }
 
@@ -285,7 +286,7 @@ gradient-and-filter($color, $fade1, $fade2) {
 	//		The percent to fade at the top
 	// $fade2:
 	//		The percent to fade at the bottom
-	
+
 	background-color: $color; // the base color
 	linear-gradient(#fff0 + rgba(0, 0, 0, $fade1 / 100), #fff0 + rgba(0, 0, 0, $fade2 / 100));
 	filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=%s, endColorstr=%s)" % (fullcolor(lighten($color, $fade1)) fullcolor(lighten($color, $fade2))); // IE
@@ -302,7 +303,7 @@ horizontal-gradient-and-filter($color, $fade1, $fade2) {
 	//		The percent to fade at the top
 	// $fade2:
 	//		The percent to fade at the bottom
-	
+
 	background-color: $color; // the base color
 	linear-gradient(left, #fff0 + rgba(0, 0, 0, $fade1 / 100), #fff0 + rgba(0, 0, 0, $fade2 / 100));
 	filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=%s, endColorstr=%s, gradientType=1)" % (fullcolor(lighten($color, $fade1)) fullcolor(lighten($color, $fade2))); // IE
