@@ -1,19 +1,27 @@
 # Dijit Claro Stylus Conversion
 
-This repository contains a port of Dijit's Claro theme (as of Dojo version 1.9.1)
-from [LESS](http://lesscss.org/) to [Stylus](http://learnboost.github.com/stylus/).
+This repository contains a port of Dijit's Claro theme (as of Dojo version 1.10.4)
+from [Less](http://lesscss.org/) to [Stylus](http://learnboost.github.com/stylus/).
 
-**Note:** conversions for Dojo 1.7 and 1.8 are available on separate branches:
+**Note:** conversions for earlier Dojo versions (back to 1.7) are available on separate branches:
 
-* [dojo17 branch](https://github.com/kfranqueiro/dijit-claro-stylus/tree/dojo17)
-* [dojo18 branch](https://github.com/kfranqueiro/dijit-claro-stylus/tree/dojo18)
+* [1.7 branch](https://github.com/kfranqueiro/dijit-claro-stylus/tree/1.7)
+* [1.8 branch](https://github.com/kfranqueiro/dijit-claro-stylus/tree/1.8)
+* [1.9 branch](https://github.com/kfranqueiro/dijit-claro-stylus/tree/1.9)
 
 ## Usage
 
-To generate the CSS resources, install Stylus (e.g. using NPM), then within
-the directory this repository was cloned to, run...
+Make sure Stylus is installed...
 
-    stylus . form layout
+```
+npm install -g stylus
+```
+
+...then inside the top level of this repository, run:
+
+```
+stylus . form layout
+```
 
 ## Notes
 
@@ -22,7 +30,7 @@ following processes:
 
 * Compared CSS output of both LESS and Stylus for (near-)matching values
 * Compared diffs between the previous and current Dojo version's LESS against
-  the corresponding diffs between the 1.7 and 1.8 conversions in this repository
+  the corresponding diffs between the previous and current versions in this repository
 * Visually compared using `dijit/themes/themeTester.html`
 
 ## Differences
